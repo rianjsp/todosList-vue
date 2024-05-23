@@ -16,7 +16,7 @@ const showPreloader = ref(true);
 onMounted(() => {
   setTimeout(() => {
     showPreloader.value = false;
-  }, 2000);
+  }, 1000);
 });
 </script>
 

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Home/>
+    <Home />
+    
   </div>
 </template>
 
@@ -9,7 +10,7 @@ import Home from '../src/Views/Home.vue'
 
 
 </script>
-
+  
 <style scoped>
 
 </style>

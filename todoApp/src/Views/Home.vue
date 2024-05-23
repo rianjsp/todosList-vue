@@ -1,9 +1,12 @@
 <template>
-  <div class="appcontent flex flex-col min-h-screen max-h-screen bg-slate-900 items-center justify-center">
+  <div class="appcontent bg-slate-900 flex flex-col min-h-screen max-h-screen items-center justify-center">
     <!-- Preloader -->
     <Preloader/>
     
-    <h1 class="text-white box-border mb-11 font-semibold text-5xl border-b-4 rounded-mg first-letter:text-rose-500 first-letter:text-6xl  font-sans"><strong>To<span class="text-rose-500">-</span>do List</strong></h1>
+    <div class="flex flex-col">
+    <Socials />
+    <h1 class="text-white box-border mb-6 font-semibold text-5xl border-b-4 rounded-mg first-letter:text-rose-500 first-letter:text-6xl  font-sans"><strong>To<span class="text-rose-500">-</span>do List</strong></h1>
+    </div>
 
 
     <!-- Header -->
@@ -26,10 +29,10 @@
     
     
     <!-- Div central -->
-    <div class="container box-border border-solid border-l-4 border-sky-200 mb-4 w-96 h-1/2 overflow-y-auto custom-scrollbar">
+    <div class="container box-border border-solid border-l-4 border-sky-200 mb-4 h-3/4 overflow-y-auto overflow-x-auto custom-scrollbar">
 
-      <ul class="text-white font-semibold capitalize mt-5 m-5">
-        <li class="flex flex-row justify-between items-center mb-6" v-for="task in todos" :key="task.id"> 
+      <ul class="text-white font-semibold capitalize mt-5 m-5 box-border flex flex-col flex-wrap">
+        <li class="flex flex-row bg-slate-950 m-4 py-5 px-7 rounded-lg backdrop-opacity-10 justify-between items-center mb-6" v-for="task in todos" :key="task.id"> 
             
             <strong>{{task.name}}</strong>
             
@@ -46,16 +49,17 @@
         
         </li>
       </ul>
-
-
+            
+        
     </div>
-
+    
   </div>
 </template>
 
 <script setup >
 import { ref, reactive} from 'vue';
 import Preloader from '../components/Preloader.vue';
+import Socials from '../components/Socials.vue'
 
 // Ref sempre para tipos de dados primitivos
 // Reactive para objetos...
@@ -81,7 +85,7 @@ function removeTask(id) {
 }
 </script>
 
-<style scoped>
+<style >
 
 
 /*Custom scrollbar o codigo foi copiado da internet*/
